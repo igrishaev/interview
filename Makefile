@@ -1,5 +1,9 @@
 install:
-	npm install -g doctoc
+	pip install markdown
 
 toc:
-	doctoc .
+	/usr/local/bin/python -m markdown \
+		-x markdown.extensions.toc python.md \
+		-x markdown.extensions.fenced_code \
+		-x codehilite \
+		> index.html
