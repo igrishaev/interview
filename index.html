@@ -79,7 +79,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <li><a href="#_28">Классы, объекты</a><ul>
 <li><a href="#_29">Как получить список атрибутов объекта?</a></li>
 <li><a href="#_30">Что такое магические методы, для чего нужны?</a></li>
-<li><a href="#_31">Как в класе сослаться на родительский класс?</a></li>
+<li><a href="#_31">Как в классе сослаться на родительский класс?</a></li>
 <li><a href="#mro">Возможно ли множественное наследование? Что такое MRO?</a></li>
 <li><a href="#_32">Что такое миксины?</a></li>
 <li><a href="#_33">Что такое контекстный менеджер? Как написать свой?</a></li>
@@ -88,7 +88,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <li><a href="#_value-__value">В чем смысл параметров_value, __value</a></li>
 </ul>
 </li>
-<li><a href="#_34">Многопоточноть</a></li>
+<li><a href="#_34">Многопоточность</a></li>
 <li><a href="#_35">Джанго</a></li>
 <li><a href="#_36">Тесты</a></li>
 </ul>
@@ -105,7 +105,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <li><a href="#_38">Как клиенту понять, удался запрос или нет?</a></li>
 <li><a href="#_39">Что нужно отправить браузеру, чтобы перенаправить на другую страницу?</a></li>
 <li><a href="#http_2">Как управлять кешированием в HTTP?</a></li>
-<li><a href="#_40">Как кешируются файлы на уровне протокола?</a></li>
+<li><a href="#_40">Как кэшируются файлы на уровне протокола?</a></li>
 </ul>
 </li>
 <li><a href="#_41">СУБД</a></li>
@@ -144,8 +144,8 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <p>Декодировать -- восстановить Юникод из цепочки байт. Вызвать метод
 <code>.decode()</code> у объекта <code>str</code> или <code>bytes</code> (версии Питона 2 и 3
 соответственно).</p>
-<p>В обоих случах явно передавать кодировку, иначе будет использована та,
-что определена в системе по-умолчанию. Быть готовым поймать исключения
+<p>В обоих случаях явно передавать кодировку, иначе будет использована та,
+что определена в системе по умолчанию. Быть готовым поймать исключения
 <code>UnicodeEncodeError</code>, <code>UnicodeDecodeError</code>.</p>
 <h6 id="abc-uabc">Прокомментировать выражение <code>'ABC' == u'ABC'</code>.</h6>
 <p>Строки сравниваются по кодам символов. Если обе строки набраны
@@ -175,7 +175,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 
 <ul>
 <li>Вариант с циклом. Медленно, но гарантирует порядок. Подходит, если
-  элементы словаря нельзя помещять внуть множества (например,
+  элементы словаря нельзя помещать внутрь множества (например,
   словари).</li>
 </ul>
 <div class="codehilite"><pre><span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
@@ -197,9 +197,9 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 очередной элемент (в нашем случае словарь) и возвращает
 значение-критерий сортировки.</p>
 <p>Код ниже показывает, как отсортировать список людей по возрасту:</p>
-<div class="codehilite"><pre><span class="n">users</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}]</span>
-<span class="n">users</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">user</span><span class="p">:</span> <span class="n">user</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}]</span>
+<div class="codehilite"><pre><span class="n">users</span> <span class="o">=</span> <span class="p">[{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}]</span>
+<span class="n">users</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">user</span><span class="p">:</span> <span class="n">user</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}]</span>
 </pre></div>
 
 
@@ -211,22 +211,22 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <p>Списки, словари и множества изменяемы и не имеют метода хеширования.
 При подстановке их в словарь возникнет ошибка.</p>
 <p>Хеш кортежа вычисляется рекурсивно по всем элементам. Так, кортеж</p>
-<div class="codehilite"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">))))</span>
+<div class="codehilite"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;hello&#39;</span><span class="p">,</span> <span class="p">))))</span>
 </pre></div>
 
 
 <p>состоит только из неизменяемых элементов, поэтому может быть
 ключом. Однако, такой кортеж</p>
-<div class="codehilite"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">({</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="s1">&#39;world&#39;</span><span class="p">},</span> <span class="p">))))</span>
+<div class="codehilite"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">({</span><span class="s">&#39;hello&#39;</span><span class="p">:</span> <span class="s">&#39;world&#39;</span><span class="p">},</span> <span class="p">))))</span>
 </pre></div>
 
 
-<p>содержит глубоко внутри словарь, поэтому хеш не может быть расчитан.</p>
+<p>содержит глубоко внутри словарь, поэтому хеш не может быть рассчитан.</p>
 <h6 id="-">Есть два списка -- ключи и значения. Как составить из них словарь?</h6>
-<div class="codehilite"><pre><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">]</span>
+<div class="codehilite"><pre><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;baz&#39;</span><span class="p">]</span>
 <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">vals</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;baz&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s">&#39;baz&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 </pre></div>
 
 
@@ -251,7 +251,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 аргументы. <code>kwargs</code> -- словарь позиционных аргументов, где ключ -- имя
 параметра, значение -- значение параметра.</p>
 <p><strong>Важно:</strong> если в функцию не передано никаких параметров, переменные
-будут соответствено равны пустому кортежу и пустому словарю, а не
+будут соответственно равны пустому кортежу и пустому словарю, а не
 <code>None</code>.</p>
 <p>Пожалуйста, не путайте кортеж со списком. Следующий вопрос объясняет,
 почему.</p>
@@ -260,7 +260,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 их дефолтные значения тоже создаются один раз и хранятся в одном из
 полей объекта-функции.</p>
 <p>В нашем примере <code>bar</code> равен пустому списку. Список -- изменяемая
-коллекция, поэтому, поэтому значение <code>bar</code> может изменяться от вызова
+коллекция, поэтому значение <code>bar</code> может изменяться от вызова
 к вызову. Пример:</p>
 <div class="codehilite"><pre><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="o">=</span><span class="p">[]):</span>
     <span class="n">bar</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -374,11 +374,11 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
             <span class="k">if</span> <span class="n">perm</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">permissions</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">view</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">HTTPRedirect</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">HTTPRedirect</span><span class="p">(</span><span class="s">&#39;/login&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">wrapper</span>
     <span class="k">return</span> <span class="n">decorator</span>
 
-<span class="nd">@has_perm</span><span class="p">(</span><span class="s1">&#39;view_user&#39;</span><span class="p">)</span>
+<span class="nd">@has_perm</span><span class="p">(</span><span class="s">&#39;view_user&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
@@ -394,7 +394,7 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <h6 id="x-for-x-in-y-x-for-x-in-y">В чем отличие <code>[x for x in y]</code> от <code>(x for x in y)</code>?</h6>
 <p>Первое выражение возвращает список, второе -- генератор.</p>
 <h6 id="_23">Что особенного в генераторе?</h6>
-<p>Герератор хранит в памяти не все элементы, а только внутреннее
+<p>Генератор хранит в памяти не все элементы, а только внутреннее
 состояние для вычисления очередного элемента. На каждом шаге можно
 вычислить только следующий элемент, но не предыдущий. Пройти генератор
 в цикле можно только один раз.</p>
@@ -413,12 +413,12 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <h6 id="_27">Что возвращает итерация по словарю?</h6>
 <p>Зависит от версии Питона. Во второй ветке ключи. В третей -- кортежи
 вида <code>(key, value)</code>.</p>
-<div class="codehilite"><pre><span class="c1"># 2.x</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}:</span>
+<div class="codehilite"><pre><span class="c"># 2.x</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">{</span><span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}:</span>
     <span class="n">process_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="c1"># 3.x</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="c"># 3.x</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="p">{</span><span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}:</span>
     <span class="n">process_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="n">process_key</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 </pre></div>
@@ -430,12 +430,12 @@ value)</code>.</p>
 <h3 id="_28">Классы, объекты</h3>
 <h6 id="_29">Как получить список атрибутов объекта?</h6>
 <p>Функция <code>dir</code> возвращает список строк -- полей объекта. Поле
-<code>__dict__</code> содердит словарь вида <code>{поле -&gt; значение}</code>.</p>
+<code>__dict__</code> содержит словарь вида <code>{поле -&gt; значение}</code>.</p>
 <h6 id="_30">Что такое магические методы, для чего нужны?</h6>
 <p>Магическими метода называют методы, имена которых начинаются и
 заканчиваются двойным подчеркиванием. Магические они потому, что почти
 никогда не вызываются явно. Их вызывают встроенные функции или
-систаксические конструкции. Например, функция <code>len()</code> вызывает метод
+синтаксические конструкции. Например, функция <code>len()</code> вызывает метод
 <code>__len__()</code> переданного объекта. Метод <code>__add__(self, other)</code>
 вызывается автоматически при сложении оператором <code>+</code>.</p>
 <p>Перечислим некоторые магические методы:</p>
@@ -446,7 +446,7 @@ value)</code>.</p>
 <li><code>__cmp__</code>: сравнение (больше, меньше, равно)</li>
 <li><code>__iter__</code>: при подстановке объекта в цикл</li>
 </ul>
-<h6 id="_31">Как в класе сослаться на родительский класс?</h6>
+<h6 id="_31">Как в классе сослаться на родительский класс?</h6>
 <p>Функция <code>super</code> принимает класс и экземпляр:</p>
 <div class="codehilite"><pre><span class="k">class</span> <span class="nc">NextClass</span><span class="p">(</span><span class="n">FirstClass</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
@@ -459,12 +459,12 @@ value)</code>.</p>
 <p>Да, можно указать более одного родителя в классе потомка.</p>
 <p><code>MRO</code> -- method resolution order, порядок разрешения
 методов. Алгоритм, по которому следует искать метод в случае, если у
-класса два и более родителей. Алгортитм линеизирует граф
+класса два и более родителей. Алгоритм линеизирует граф
 наследования. Коротко можно описать так: ищи слева направо. Поэтому
 чем правее стоит класс, тем меньше у него приоритет при поиске метода.</p>
 <h6 id="_32">Что такое миксины?</h6>
 <p>Миксин (mix-in, анг. "примесь"), паттерн проектирования в ООП, когда в
-цепочку наследования добавляется неболшой класс-помошник. Например,
+цепочку наследования добавляется небольшой класс-помощник. Например,
 есть класс</p>
 <div class="codehilite"><pre><span class="k">class</span> <span class="nc">NowMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">now</span><span class="p">():</span>
@@ -472,7 +472,7 @@ value)</code>.</p>
 </pre></div>
 
 
-<p>Тогда любой класс, наслодованный с этим миксином, будет иметь метод
+<p>Тогда любой класс, наследованный с этим миксином, будет иметь метод
 <code>now()</code>.</p>
 <h6 id="_33">Что такое контекстный менеджер? Как написать свой?</h6>
 <p>В питоне есть оператор <code>with</code>. Размещенный внутри код выполняется с
@@ -486,12 +486,12 @@ value)</code>.</p>
 <p><code>__exit__</code> срабатывает в момент выхода блока, в т.ч. и по причине
 исключения. В этом случае в метод будет передана тройка значений
 <code>(exc_class, exc_instance, traceback)</code>.</p>
-<p>Самый распространненный контекстный менеджер -- класс, порожденный
+<p>Самый распространённый контекстный менеджер -- класс, порожденный
 функцией <code>open</code>. Он гарантирует, что файл будет закрыт даже в том
 случае, если внутри блока возникнет ошибка.</p>
 <p>Старайтесь выходить из контекстного менеджера как можно быстрее, чтобы
 освобождать контекст и ресурсы.</p>
-<div class="codehilite"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="codehilite"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
@@ -510,12 +510,12 @@ value)</code>.</p>
 <h6 id="__slots__">Что такое <code>__slots__</code>? Плюсы, минусы.</h6>
 <p>Классы хранят поля и их значения в секретном словаре
 <strong>dict</strong>. Поскольку словарь -- изменяемая структура, вы можете на лету
-добавлять и удалать из класса поля. Параметр <strong>slots</strong> в классе жестко
-фиксирует набор полей класса. Слоты используют когда у класса может
+добавлять и удалять из класса поля. Параметр <strong>slots</strong> в классе жестко
+фиксирует набор полей класса. Слоты используются когда у класса может
 быть очень много полей, например, в некоторых <code>ORM</code>, либо когда
 критична производительность, потому что доступ к слоту срабатывает
 быстрее, чем поиск в словаре.</p>
-<p>Cлоты активно используются в библиотеках <code>requests</code> и <code>falcon</code>.</p>
+<p>Слоты активно используются в библиотеках <code>requests</code> и <code>falcon</code>.</p>
 <p>Недостатки: нельзя присвоить классу поле, которого нет в слотах. Не
 работают методы <code>__getattr__</code> и <code>__setattr__</code>.</p>
 <h6 id="_value-__value">В чем смысл параметров<code>_value, __value</code></h6>
@@ -543,13 +543,13 @@ value)</code>.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">__bar</span> <span class="o">=</span> <span class="mi">42</span>
 
 <span class="n">Foo</span><span class="p">()</span><span class="o">.</span><span class="n">__bar</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;Foo&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;__bar&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">AttributeError</span><span class="p">:</span> <span class="s">&#39;Foo&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s">&#39;__bar&#39;</span>
 <span class="n">Foo</span><span class="p">()</span><span class="o">.</span><span class="n">_Foo__bar</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">42</span>
 </pre></div>
 
 
-<h3 id="_34">Многопоточноть</h3>
+<h3 id="_34">Многопоточность</h3>
 <ul>
 <li>Как в питоне реализуется многопоточность? Какие модули?</li>
 <li>Что такое GIL? Как работает? Какие проблемы? Как решать?</li>
@@ -564,8 +564,8 @@ value)</code>.</p>
 <li>Как джанга определяет, с какой сессией работать?</li>
 <li>Что такое Middleware, для чего, как реализуется?</li>
 <li>Какие основные мидлвари?</li>
-<li>Опишите алогитм работы auth middleware, распознавание юзера</li>
-<li>Опишите алг. работы csrf middleware</li>
+<li>Опишите алгоритм работы auth middleware, распознавание юзера</li>
+<li>Опишите алгоритм работы csrf middleware</li>
 <li>Что такое сигналы, зачем нужны?</li>
 <li>Как определить свои фильтры для шаблонной системы?</li>
 <li>Что такое ORM? Как в Джанго организовать связь между моделями?</li>
@@ -585,7 +585,7 @@ value)</code>.</p>
 <p>Common Gateway Interface. Соглашение о том, как веб-сервер
 взаимодействует с программой, написанной на каком-то языке. Веб-сервер
 запускает программу как исполняемый файл. Параметры запроса, например,
-метод, путь, заголовки и тд. передаются через переменные окружения.</p>
+метод, путь, заголовки и т.д. передаются через переменные окружения.</p>
 <p>Программа должна прочитать эти переменные и записать в стандартный
 поток вывода HTTP-ответ.</p>
 <p>Плюсы:</p>
@@ -612,10 +612,10 @@ value)</code>.</p>
 сохраняют в куки пользователя. При отправке формы поле и куки должны
 совпасть. Способ не является надежным и обходится скриптом.</p>
 <h6 id="_37">Как защитить куки от воровства и от подделки?</h6>
-<p>Зависит от того, насколько строгие критерии безопосности на
+<p>Зависит от того, насколько строгие критерии безопасности на
 сайте. Если в куках хранятся вспомогательные данные, например, индекс
 последнего выбранного в дропдауне элемента, правилами ниже можно
-пренебреч.</p>
+пренебречь.</p>
 <p>Для платежных систем, сайтов с приватными данными приведенные правила
 обязательны.</p>
 <ul>
@@ -626,7 +626,7 @@ value)</code>.</p>
 <li>Устанавливать короткий срок жизни куки.</li>
 <li>Устанавливать короткий срок сессии на сервере.</li>
 <li>Добавлять в ключ сессии заголовок <code>User-Agent</code>. Тогда если украсть
-  куки и устанвить на другой машине, ключ сессии будет другим.</li>
+  куки и установить на другой машине, ключ сессии будет другим.</li>
 <li>Аналогично пункту выше, но добавлять <code>IP</code> пользователя.</li>
 <li>Подписывать куки секретным ключом. Добавлять поле <code>sig</code>, которое
   равно <code>HMAC-SHA1(cookie-body, secret_key)</code>. На сервере проверять,
@@ -687,9 +687,9 @@ value)</code>.</p>
   зависимости от даты обновления документа.</li>
 <li>Заголовок <code>Etag</code> кеширует документ по его уникальному хешу.</li>
 </ul>
-<h6 id="_40">Как кешируются файлы на уровне протокола?</h6>
+<h6 id="_40">Как кэшируются файлы на уровне протокола?</h6>
 <p>Когда <code>Nginx</code> отдает статичный файл, он добавляет заголовок <code>Etag</code> --
-<code>MD5</code>-хеш файла. Клиент запоминает этот хеш. В следующй раз при
+<code>MD5</code>-хеш файла. Клиент запоминает этот хеш. В следующий раз при
 запросе файла клиент посылает хеш. Сервер проверяет хеш клиента для
 этого файла. Если хеш не совпадает (файл обновили), сервер отвечает с
 кодом <code>200</code> и выгружает актуальный файл с новым хешем. Если хеши
@@ -715,11 +715,11 @@ value)</code>.</p>
 <li>В чем разница <code>function foo() {...}</code> и <code>var foo = function() {...}</code></li>
 <li>Прокомментировать выражение:</li>
 </ul>
-<div class="codehilite"><pre>(function($) {
-    $(function() {
-        alert(123);
-    });
-})(jQuery);
+<div class="codehilite"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
 </pre></div>
 
 
@@ -733,10 +733,10 @@ value)</code>.</p>
 <h2 id="_44">Алгоритмы, структуры</h2>
 <h6 id="_45">Что такое рекурсия? Какие минусы, плюсы?</h6>
 <p>Рекурсия -- определение функции через саму себя. Логика рекурсивной
-функции как правило состоит из двух ветвей. Длинная ветвь вызывет эту
+функции как правило состоит из двух ветвей. Длинная ветвь вызывает эту
 же функцию с другими параметрами, чтобы накопить результат. Короткая
 ветвь определяет критерий выхода из рекурсии.</p>
-<p>Рекусрия упрощает код и делает его декларативным. Рекурсия поощрает
+<p>Рекурсия упрощает код и делает его декларативным. Рекурсия поощряет
 мыслить функционально и избегать побочных эффектов.</p>
 <p>Неоптимизированная рекурсия приводит к накладным расходам
 ресурсов. При большом количестве итераций можно превысить лимит на
@@ -750,7 +750,7 @@ value)</code>.</p>
 fact(N - 1)</code> не поддерживает хвостовую рекурсию, потому что для
 каждого стек-фрейма придется хранить текущее значение <code>N</code>.</p>
 <p>Чтобы сделать рекурсии хвостовой, добавляют
-параметры-аккумуляторы. Блягодаря им функция знает о своем текущем
+параметры-аккумуляторы. Благодаря им функция знает о своем текущем
 состоянии. Пусть параметр <code>acc</code> по умолчанию равен 1. Тогда запись с
 хвостовой рекурсией будет выглядеть так:</p>
 <div class="codehilite"><pre><span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">acc</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
@@ -783,9 +783,9 @@ fact(N - 1)</code> не поддерживает хвостовую рекурс
 <ul>
 <li>Написать декоратор, который выводит на экран время работы произвольной функции.</li>
 <li>Написать декоратор, который возвращает либо результат, либо экземпляр исключения.</li>
-<li>Написать генератор Фибонначи от a и b.</li>
+<li>Написать генератор Фибоначчи от a и b.</li>
 <li>Получить из файла текст в юникоде.</li>
-<li>Написать ченератор чисел Фиббоначи вида <code>def fib(a=1, b=2):</code></li>
+<li>Написать генератор чисел Фибоначчи вида <code>def fib(a=1, b=2):</code></li>
 </ul>
 <h2 id="orm">Задача на ORM</h2>
 <div class="codehilite"><pre><span class="k">class</span> <span class="n">City</span>(<span class="n">models</span>.<span class="n">Model</span>):
