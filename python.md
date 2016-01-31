@@ -2,8 +2,14 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- bootstrap -->
+
 </head>
 <body>
+<div class="container">
 
 <!--github-->
 <a href="https://github.com/igrishaev/interview"><img style="position: absolute; top:
@@ -24,6 +30,10 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 
 </script>
 <!--google-->
+
+<h3><a href="/">&larr; Блог</a></h3>
+
+<h1>Собеседование. Вопросы для подготовки</h1>
 
 [TOC]
 
@@ -891,5 +901,8 @@ class Person(models.Model):
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 <!--disqus-->
 
+</div>
 </body>
 </html>
+
+[back-blog]: /
