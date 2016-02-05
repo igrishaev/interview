@@ -32,7 +32,9 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 
 <!--google-->
 
-<h3><a href="/">&larr; Блог</a></h3>
+<h4><a href="http://grishaev.me/">&larr; Блог Ивана Гришаева</a></h4>
+
+<h4><a href="http://grishaev.me/project-interview">&larr; Об этом документе</a></h4>
 
 <h1>Собеседование. Вопросы для подготовки</h1>
 
@@ -206,9 +208,9 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 очередной элемент (в нашем случае словарь) и возвращает
 значение-критерий сортировки.</p>
 <p>Код ниже показывает, как отсортировать список людей по возрасту:</p>
-<div class="codehilite"><pre><span class="n">users</span> <span class="o">=</span> <span class="p">[{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}]</span>
-<span class="n">users</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">user</span><span class="p">:</span> <span class="n">user</span><span class="p">[</span><span class="s">&#39;age&#39;</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">[{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}]</span>
+<div class="codehilite"><pre><span class="n">users</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}]</span>
+<span class="n">users</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">user</span><span class="p">:</span> <span class="n">user</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}]</span>
 </pre></div>
 
 
@@ -220,22 +222,22 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <p>Списки, словари и множества изменяемы и не имеют метода хеширования.
 При подстановке их в словарь возникнет ошибка.</p>
 <p>Хеш кортежа вычисляется рекурсивно по всем элементам. Так, кортеж</p>
-<div class="codehilite"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;hello&#39;</span><span class="p">,</span> <span class="p">))))</span>
+<div class="codehilite"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="p">))))</span>
 </pre></div>
 
 
 <p>состоит только из неизменяемых элементов, поэтому может быть
 ключом. Однако, такой кортеж</p>
-<div class="codehilite"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">({</span><span class="s">&#39;hello&#39;</span><span class="p">:</span> <span class="s">&#39;world&#39;</span><span class="p">},</span> <span class="p">))))</span>
+<div class="codehilite"><pre><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">({</span><span class="s1">&#39;hello&#39;</span><span class="p">:</span> <span class="s1">&#39;world&#39;</span><span class="p">},</span> <span class="p">))))</span>
 </pre></div>
 
 
 <p>содержит глубоко внутри словарь, поэтому хеш не может быть рассчитан.</p>
 <h6 id="-">Есть два списка -- ключи и значения. Как составить из них словарь?</h6>
-<div class="codehilite"><pre><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;foo&#39;</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">,</span> <span class="s">&#39;baz&#39;</span><span class="p">]</span>
+<div class="codehilite"><pre><span class="n">keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">]</span>
 <span class="n">vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">vals</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s">&#39;baz&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;baz&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 </pre></div>
 
 
@@ -383,11 +385,11 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
             <span class="k">if</span> <span class="n">perm</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">permissions</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">view</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">HTTPRedirect</span><span class="p">(</span><span class="s">&#39;/login&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">HTTPRedirect</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">wrapper</span>
     <span class="k">return</span> <span class="n">decorator</span>
 
-<span class="nd">@has_perm</span><span class="p">(</span><span class="s">&#39;view_user&#39;</span><span class="p">)</span>
+<span class="nd">@has_perm</span><span class="p">(</span><span class="s1">&#39;view_user&#39;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="o">...</span>
 </pre></div>
@@ -422,12 +424,12 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 <h6 id="_27">Что возвращает итерация по словарю?</h6>
 <p>Зависит от версии Питона. Во второй ветке ключи. В третей -- кортежи
 вида <code>(key, value)</code>.</p>
-<div class="codehilite"><pre><span class="c"># 2.x</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">{</span><span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}:</span>
+<div class="codehilite"><pre><span class="c1"># 2.x</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}:</span>
     <span class="n">process_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="c"># 3.x</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="p">{</span><span class="s">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}:</span>
+<span class="c1"># 3.x</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;foo&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}:</span>
     <span class="n">process_key</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="n">process_key</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 </pre></div>
@@ -500,7 +502,7 @@ value)</code>.</p>
 случае, если внутри блока возникнет ошибка.</p>
 <p>Старайтесь выходить из контекстного менеджера как можно быстрее, чтобы
 освобождать контекст и ресурсы.</p>
-<div class="codehilite"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="codehilite"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
@@ -552,7 +554,7 @@ value)</code>.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">__bar</span> <span class="o">=</span> <span class="mi">42</span>
 
 <span class="n">Foo</span><span class="p">()</span><span class="o">.</span><span class="n">__bar</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="ne">AttributeError</span><span class="p">:</span> <span class="s">&#39;Foo&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s">&#39;__bar&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;Foo&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;__bar&#39;</span>
 <span class="n">Foo</span><span class="p">()</span><span class="o">.</span><span class="n">_Foo__bar</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="mi">42</span>
 </pre></div>
@@ -724,11 +726,11 @@ value)</code>.</p>
 <li>В чем разница <code>function foo() {...}</code> и <code>var foo = function() {...}</code></li>
 <li>Прокомментировать выражение:</li>
 </ul>
-<div class="codehilite"><pre><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">alert</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+<div class="codehilite"><pre>(function($) {
+    $(function() {
+        alert(123);
+    });
+})(jQuery);
 </pre></div>
 
 

@@ -31,7 +31,8 @@ alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribb
 </script>
 <!--google-->
 
-<h3><a href="/">&larr; Блог</a></h3>
+<h4><a href="http://grishaev.me/">&larr; Блог Ивана Гришаева</a></h4>
+<h4><a href="http://grishaev.me/project-interview">&larr; Об этом документе</a></h4>
 
 <h1>Собеседование. Вопросы для подготовки</h1>
 
