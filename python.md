@@ -453,7 +453,7 @@ value)`.
 ```python
 class NextClass(FirstClass):
     def __init__(self, x):
-        super(FirstClass, self).__init__()
+        super(NextClass, self).__init__()
         self.x = x
 ```
 
